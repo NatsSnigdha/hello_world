@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdminPro Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">AdminPro</div>
+      <nav aria-label="Main navigation">
+        <a href="#" class="active">▦ Dashboard</a>
+        <a href="#">👥 Customers</a>
+        <a href="#">📦 Products</a>
+        <a href="#">🛒 Orders</a>
+        <a href="#">📊 Analytics</a>
+        <a href="#">⚙ Settings</a>
+        <a href="#">🚪 Logout</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <h1>Dashboard</h1>
+        <input type="search" id="search" placeholder="Search transactions..." aria-label="Search transactions">
+      </header>
+
+      <section class="stats" aria-label="Dashboard statistics">
+        <article class="card">
+          <p>Total Revenue</p><h2>$45,250</h2>
+          <div class="green">↑ 12.5% this month</div>
+        </article>
+        <article class="card">
+          <p>Total Orders</p><h2>1,250</h2>
+          <div class="green">↑ 8.2% this month</div>
+        </article>
+        <article class="card">
+          <p>Total Customers</p><h2>8,540</h2>
+          <div class="green">↑ 15.3% this month</div>
+        </article>
+        <article class="card">
+          <p>Products Sold</p><h2>3,620</h2>
+          <div class="green">↑ 5.6% this month</div>
+        </article>
+      </section>
+
+      <section class="charts" aria-label="Sales charts">
+        <div class="chart-box">
+          <h2>Revenue Overview</h2>
+          <div class="chart-container"><canvas id="revenueChart"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h2>Sales Distribution</h2>
+          <div class="chart-container"><canvas id="salesChart"></canvas></div>
+        </div>
+      </section>
+
+      <section class="table-box">
+        <h2>Recent Transactions</h2>
+        <div class="table-scroll">
+          <table id="transactionTable">
+            <thead>
+              <tr><th>Customer</th><th>Product</th><th>Date</th><th>Amount</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>John Smith</td><td>Laptop</td><td>24 Nov 2026</td><td>$1,200</td><td><span class="status">Completed</span></td></tr>
+              <tr><td>Sarah Wilson</td><td>Smartphone</td><td>23 Nov 2026</td><td>$850</td><td><span class="status">Completed</span></td></tr>
+              <tr><td>Michael Brown</td><td>Headphones</td><td>22 Nov 2026</td><td>$150</td><td><span class="status">Completed</span></td></tr>
+              <tr><td>Emma Davis</td><td>Smartwatch</td><td>21 Nov 2026</td><td>$300</td><td><span class="status">Completed</span></td></tr>
+            </tbody>
+          </table>
+          <p class="empty-state" id="emptyState" hidden>No matching transactions found.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
